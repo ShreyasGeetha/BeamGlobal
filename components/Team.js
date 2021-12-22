@@ -9,12 +9,12 @@ const Team = () => {
   return (
     <div className='bg-white shadow-md max-w-7xl mx-auto m-4 lg:my-7'>
       <div className='text-3xl lg:text-4xl font-serif my-7 mx-4 text-center md:text-justify'>
-        <span>BeamGlobal Manage Service's Team</span>
+        <span>BeamGlobal Manage Service&apos;s Team</span>
       </div>
       <div className='flex flex-col md:grid md:grid-cols-3 m-4 lg:my-10'>      
         {
-          teams.map((team) => (
-            <div className='  m-2 p-2 md:p-4 lg:m-7 shadow-md rounded-t-3xl rounded-b-3xl border-t-indigo-400 border-b-indigo-400 border-2'>
+          teams.map((team, index) => (
+            <div key={index} className='  m-2 p-2 md:p-4 lg:m-7 shadow-md rounded-t-3xl rounded-b-3xl border-t-indigo-400 border-b-indigo-400 border-2'>
               <div>
                 <img className=' rounded-full h-36 w-36 lg:h-48 lg:w-48 mx-auto' src={team.icon} alt="" />
               </div>

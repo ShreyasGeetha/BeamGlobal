@@ -17,7 +17,7 @@ const MiddleSection = () => {
       <div className='m-4 md:grid md:grid-cols-2 lg:grid-cols-3'>
         {
           challenges.map((items, index) => (
-            <div className='p-2 m-2'>
+            <div key={index} className='p-2 m-2'>
               <div className=''>
                 <img className=' rounded-full 
                       h-50 w-48 sm:h-52 sm:w-56 md:h-44 md:w-50 
