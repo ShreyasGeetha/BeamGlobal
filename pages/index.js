@@ -3,7 +3,6 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import HeroSection from '../components/HeroSection';
 import Info from '../components/Info';
-import middleSection from '../components/middleSection';
 import MiddleSection from '../components/MiddleSection';
 import Team from '../components/Team';
 import Offerings from '../components/Offerings';
