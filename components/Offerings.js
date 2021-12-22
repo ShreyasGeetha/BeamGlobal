@@ -14,7 +14,7 @@ const Offerings = () => {
             </span>
           </div>
           <div className='m-1 p-2 '>
-            <span className='text-xl font-normal'>
+            <span className='text-xl lg:text-lg font-normal'>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet repellat odit nesciunt temporibus omnis iste cupiditate est sunt veniam! Suscipit temporibus rem, dolorem numquam architecto ullam doloribus sed laboriosam 
             </span>
           </div>
@@ -26,7 +26,7 @@ const Offerings = () => {
             </span>
           </div>
           <div className='m-1 p-2'>
-            <span className='text-xl font-normal'>
+            <span className='text-xl lg:text-lg font-normal'>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet repellat odit nesciunt temporibus omnis iste cupiditate est sunt veniam! Suscipit temporibus rem, dolorem numquam architecto ullam doloribus sed laboriosam 
             </span>
           </div>
@@ -38,7 +38,7 @@ const Offerings = () => {
             </span>
           </div>
           <div className='m-1 p-2'>
-            <span className='text-xl font-normal'>
+            <span className='text-xl lg:text-lg font-normal'>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet repellat odit nesciunt temporibus omnis iste cupiditate est sunt veniam! Suscipit temporibus rem, dolorem numquam architecto ullam doloribus sed laboriosam
             </span>
           </div>
@@ -50,7 +50,7 @@ const Offerings = () => {
             </span>
           </div>
           <div className='m-1 p-2'>
-            <span className='text-xl font-normal'>
+            <span className='text-xl lg:text-lg font-normal'>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet repellat odit nesciunt temporibus omnis iste cupiditate est sunt veniam! Suscipit temporibus rem, dolorem numquam architecto ullam doloribus sed laboriosam
             </span>
           </div>
