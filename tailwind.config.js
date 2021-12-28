@@ -7,7 +7,8 @@ module.exports = {
     extend: {
       colors: {
       'orangeHair': '#A95E2F',
-      'orangeConstrastText': '#E9FFEA'
+      'orangeConstrastText': '#E9FFEA',
+      'lightGreen': '#15323A',
     }
     },
     fontFamily: {
@@ -16,6 +17,7 @@ module.exports = {
       'charter': ['PwC ITC Charter', 'Georgia', 'Serif'],
       'Helvetica': ['PwC Helvetica Neue', 'Arial', 'Sans-Serif'],
       'handwriting': ['Vujahday Script'],
+      'sofia': ['sofia-pro'],
     },    
   },
   plugins: [],

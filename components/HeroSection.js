@@ -5,7 +5,7 @@ const HeroSection = () => {
     <div className=' max-w-7xl mx-auto'>
       <div className='relative h-72 lg:h-96 sm:grid sm:grid-rows-4  sm:96 md:h-96 mx-auto min-w-full max-w-7xl overflow-hidden'>
         <div className=''>
-          <Image className='max-w-7xl mx-auto' layout="fill" objectFit="cover"  src="https://hope-product-profile-images.s3.ap-southeast-1.amazonaws.com/shutterstock_637136449.jpg" alt="" />
+          <Image className='opacity-90 max-w-7xl mx-auto' layout="fill" objectFit="cover"  src="https://hope-product-profile-images.s3.ap-southeast-1.amazonaws.com/shutterstock_637136449.jpg" alt="" />
         </div>
 
         <div className=' lg:bg-transparent md:min-w-full flex flex-col md:mx-auto absolute bottom-0  md:left-0 mt-20'>
