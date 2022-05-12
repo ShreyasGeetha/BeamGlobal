@@ -17,7 +17,7 @@ const MiddleSection = () => {
       <div className='m-4 md:grid md:grid-cols-2 lg:grid-cols-3'>
         {
           challenges.map((items, index) => (
-            <div key={index} className='p-2 m-2 bg-gray-50 hover:shadow-2xl hover:bg-white duration-300'>
+            <div key={index} className='p-2 m-2 bg-white hover:shadow-2xl hover:bg-gray-50 duration-300'>
               <div className=''>
                 <img className=' rounded-full 
                       h-50 w-48 sm:h-52 sm:w-56 md:h-44 md:w-50 
