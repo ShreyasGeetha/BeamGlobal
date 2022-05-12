@@ -19,23 +19,30 @@ import {
   UserGroupIcon,
   ViewGridIcon,
   XIcon,
+  LocationMarkerIcon
 } from '@heroicons/react/outline'
+// import {UserGroupIcon} from '@heroicons/react/solid/UserGroupIcon'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 
-const solutions = [
+const services = [
   {
-    name: 'Analytics',
-    description: 'Get a better understanding of where your traffic is coming from.',
+    name: 'Application Managed Services',
+    description: 'GRC Support and administration. GRC Vendor liaison for bugs and incidents',
     href: '#',
     icon: ChartBarIcon,
   },
   {
-    name: 'Engagement',
-    description: 'Speak directly to your customers in a more meaningful way.',
+    name: 'Controls Execution Services',
+    description: 'Execute controls, Control documentation',
     href: '#',
     icon: CursorClickIcon,
   },
-  { name: 'Security', description: "Your customers' data will be safe and secure.", href: '#', icon: ShieldCheckIcon },
+  {
+    name: 'GRC Strategy Services',
+    description: "GRC Strategy. Remediation Strategy. Opportunities for automation.",
+    href: '#',
+    icon: ShieldCheckIcon
+  },
   {
     name: 'Integrations',
     description: "Connect with third-party tools that you're already using.",
@@ -49,12 +56,14 @@ const callsToAction = [
   { name: 'Contact Sales', href: '#', icon: PhoneIcon },
 ]
 const company = [
-  { name: 'About', href: '#', icon: InformationCircleIcon },
-  { name: 'Customers', href: '#', icon: OfficeBuildingIcon },
-  { name: 'Press', href: '#', icon: NewspaperIcon },
-  { name: 'Careers', href: '#', icon: BriefcaseIcon },
-  { name: 'Privacy', href: '#', icon: ShieldCheckIcon },
+  { name: 'Company Overview', href: '#', icon: InformationCircleIcon },
+  { name: 'Vision Mission and Values', href: '#', icon: OfficeBuildingIcon },
+  { name: 'Team', href: '#', icon: UserGroupIcon },
+  { name: 'Contact Us', href: '#', icon: PhoneIcon },
+  { name: 'Locations', href: '#', icon: LocationMarkerIcon },
+  { name: 'Clients', href: '#', icon: UserGroupIcon }
 ]
+
 const resources = [
   { name: 'Community', href: '#', icon: UserGroupIcon },
   { name: 'Partners', href: '#', icon: GlobeAltIcon },
@@ -95,7 +104,7 @@ export default function Header() {
               <span className="sr-only">Workflow</span>
               <img
                 className="h-8 w-auto sm:h-10"
-                src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                src="https://audiophille.s3.ap-southeast-1.amazonaws.com/temp/Logo.svg"
                 alt=""
               />
             </a>
@@ -113,11 +122,98 @@ export default function Header() {
                   <>
                     <Popover.Button
                       className={classNames(
-                        open ? 'text-gray-900' : 'text-gray-500',
-                        'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
+                        open ? 'text-black font-bold translate-x-1 scale-110 duration-300 ' : 'text-gray-500',
+                        'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none hover:translate-x-1 hover:scale-110 translate-x-0 duration-300'
                       )}
                     >
-                      <span>Solutions</span>
+                      <span>About Us</span>
+                      <ChevronDownIcon
+                        className={classNames(
+                          open ? 'text-gray-600' : 'text-gray-400',
+                          'ml-2 h-5 w-5 group-hover:text-gray-500'
+                        )}
+                        aria-hidden="true"
+                      />
+                    </Popover.Button>
+
+                    <Transition
+                      as={Fragment}
+                      enter="transition ease-out duration-200"
+                      enterFrom="opacity-0 -translate-y-1"
+                      enterTo="opacity-100 translate-y-0"
+                      leave="transition ease-in duration-150"
+                      leaveFrom="opacity-100 translate-y-0"
+                      leaveTo="opacity-0 -translate-y-1"
+                    >
+                      <Popover.Panel className="hidden md:block absolute z-10 top-full inset-x-0 transform shadow-lg">
+                        <div className="absolute inset-0 flex">
+                          <div className="bg-white w-1/2" />
+                          <div className="bg-gray-50 w-1/2" />
+                        </div>
+                        <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2">
+                          <nav className="grid gap-y-10 px-4 py-8 bg-white sm:grid-cols-2 sm:gap-x-8 sm:py-12 sm:px-6 lg:px-8 xl:pr-12">
+                            <div>
+                              <h3 className="text-sm font-medium tracking-wide text-gray-500 uppercase">Company</h3>
+                              <ul role="list" className="mt-5 space-y-6">
+                                {company.map((item) => (
+                                  <li key={item.name} className="flow-root">
+                                    <a
+                                      href={item.href}
+                                      className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-50"
+                                    >
+                                      <item.icon className="flex-shrink-0 h-6 w-6 text-gray-400" aria-hidden="true" />
+                                      <span className="ml-4">{item.name}</span>
+                                    </a>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                            
+                          </nav>
+                          <div className="bg-gray-50 px-4 py-8 sm:py-12 sm:px-6 lg:px-8 xl:pl-12">
+                            <div>
+                              <h3 className="text-sm font-medium tracking-wide text-gray-500 uppercase">
+                                From the blog
+                              </h3>
+                              <ul role="list" className="mt-6 space-y-6">
+                                {blogPosts.map((post) => (
+                                  <li key={post.id} className="flow-root">
+                                    <a href={post.href} className="-m-3 p-3 flex rounded-lg hover:bg-gray-100">
+                                      <div className="hidden sm:block flex-shrink-0">
+                                        <img className="w-32 h-20 object-cover rounded-md" src={post.imageUrl} alt="" />
+                                      </div>
+                                      <div className="w-0 flex-1 sm:ml-8">
+                                        <h4 className="text-base font-medium text-gray-900 truncate">{post.name}</h4>
+                                        <p className="mt-1 text-sm text-gray-500">{post.preview}</p>
+                                      </div>
+                                    </a>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                            <div className="mt-6 text-sm font-medium">
+                              <a href="#" className="text-indigo-600 hover:text-indigo-500">
+                                {' '}
+                                View all posts <span aria-hidden="true">&rarr;</span>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </Popover.Panel>
+                    </Transition>
+                  </>
+                )}
+              </Popover>
+              <Popover>
+                {({ open }) => (
+                  <>
+                    <Popover.Button
+                      className={classNames(
+                        open ? 'text-gray-900 translate-x-1 scale-110 duration-300 ' : 'text-gray-500',
+                        'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none hover:translate-x-1 hover:scale-110 translate-x-0 duration-300'
+                      )}
+                    >
+                      <span>Services</span>
                       <ChevronDownIcon
                         className={classNames(
                           open ? 'text-gray-600' : 'text-gray-400',
@@ -138,7 +234,7 @@ export default function Header() {
                     >
                       <Popover.Panel className="hidden md:block absolute z-10 top-full inset-x-0 transform shadow-lg bg-gray-100 ">
                         <div className="max-w-7xl mx-auto grid gap-y-6 px-4 py-6 sm:grid-cols-2 sm:gap-8 sm:px-6 sm:py-8 lg:grid-cols-4 lg:px-8 lg:py-12 xl:py-16 ">
-                          {solutions.map((item) => (
+                          {services.map((item) => (
                             <a
                               key={item.name}
                               href={item.href}
@@ -184,125 +280,14 @@ export default function Header() {
                 )}
               </Popover>
               <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                Pricing
+                Insights Blog
               </a>
               <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                Docs
+                Career
               </a>
-              <Popover>
-                {({ open }) => (
-                  <>
-                    <Popover.Button
-                      className={classNames(
-                        open ? 'text-gray-900' : 'text-gray-500',
-                        'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
-                      )}
-                    >
-                      <span>More</span>
-                      <ChevronDownIcon
-                        className={classNames(
-                          open ? 'text-gray-600' : 'text-gray-400',
-                          'ml-2 h-5 w-5 group-hover:text-gray-500'
-                        )}
-                        aria-hidden="true"
-                      />
-                    </Popover.Button>
-
-                    <Transition
-                      as={Fragment}
-                      enter="transition ease-out duration-200"
-                      enterFrom="opacity-0 -translate-y-1"
-                      enterTo="opacity-100 translate-y-0"
-                      leave="transition ease-in duration-150"
-                      leaveFrom="opacity-100 translate-y-0"
-                      leaveTo="opacity-0 -translate-y-1"
-                    >
-                      <Popover.Panel className="hidden md:block absolute z-10 top-full inset-x-0 transform shadow-lg">
-                        <div className="absolute inset-0 flex">
-                          <div className="bg-white w-1/2" />
-                          <div className="bg-gray-50 w-1/2" />
-                        </div>
-                        <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2">
-                          <nav className="grid gap-y-10 px-4 py-8 bg-white sm:grid-cols-2 sm:gap-x-8 sm:py-12 sm:px-6 lg:px-8 xl:pr-12">
-                            <div>
-                              <h3 className="text-sm font-medium tracking-wide text-gray-500 uppercase">Company</h3>
-                              <ul role="list" className="mt-5 space-y-6">
-                                {company.map((item) => (
-                                  <li key={item.name} className="flow-root">
-                                    <a
-                                      href={item.href}
-                                      className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-50"
-                                    >
-                                      <item.icon className="flex-shrink-0 h-6 w-6 text-gray-400" aria-hidden="true" />
-                                      <span className="ml-4">{item.name}</span>
-                                    </a>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                            <div>
-                              <h3 className="text-sm font-medium tracking-wide text-gray-500 uppercase">Resources</h3>
-                              <ul role="list" className="mt-5 space-y-6">
-                                {resources.map((item) => (
-                                  <li key={item.name} className="flow-root">
-                                    <a
-                                      href={item.href}
-                                      className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-50"
-                                    >
-                                      <item.icon className="flex-shrink-0 h-6 w-6 text-gray-400" aria-hidden="true" />
-                                      <span className="ml-4">{item.name}</span>
-                                    </a>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          </nav>
-                          <div className="bg-gray-50 px-4 py-8 sm:py-12 sm:px-6 lg:px-8 xl:pl-12">
-                            <div>
-                              <h3 className="text-sm font-medium tracking-wide text-gray-500 uppercase">
-                                From the blog
-                              </h3>
-                              <ul role="list" className="mt-6 space-y-6">
-                                {blogPosts.map((post) => (
-                                  <li key={post.id} className="flow-root">
-                                    <a href={post.href} className="-m-3 p-3 flex rounded-lg hover:bg-gray-100">
-                                      <div className="hidden sm:block flex-shrink-0">
-                                        <img className="w-32 h-20 object-cover rounded-md" src={post.imageUrl} alt="" />
-                                      </div>
-                                      <div className="w-0 flex-1 sm:ml-8">
-                                        <h4 className="text-base font-medium text-gray-900 truncate">{post.name}</h4>
-                                        <p className="mt-1 text-sm text-gray-500">{post.preview}</p>
-                                      </div>
-                                    </a>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                            <div className="mt-6 text-sm font-medium">
-                              <a href="#" className="text-indigo-600 hover:text-indigo-500">
-                                {' '}
-                                View all posts <span aria-hidden="true">&rarr;</span>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </Popover.Panel>
-                    </Transition>
-                  </>
-                )}
-              </Popover>
+              
             </Popover.Group>
-            <div className="flex items-center md:ml-12">
-              <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                Sign in
-              </a>
-              <a
-                href="#"
-                className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
-              >
-                Sign up
-              </a>
-            </div>
+            
           </div>
         </div>
       </div>
@@ -326,7 +311,7 @@ export default function Header() {
                 <div>
                   <img
                     className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                    src="https://audiophille.s3.ap-southeast-1.amazonaws.com/temp/Logo.svg"
                     alt="Workflow"
                   />
                 </div>
@@ -340,7 +325,7 @@ export default function Header() {
               <div className="mt-6 sm:mt-8">
                 <nav>
                   <div className="grid gap-7 sm:grid-cols-2 sm:gap-y-8 sm:gap-x-4">
-                    {solutions.map((item) => (
+                    {services.map((item) => (
                       <a
                         key={item.name}
                         href={item.href}
@@ -365,43 +350,32 @@ export default function Header() {
             <div className="py-6 px-5">
               <div className="grid grid-cols-2 gap-4">
                 <a href="#" className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                  Pricing
+                  Company Overview
+                </a>
+
+                 <a href="#" className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
+                  Careers
+                </a>
+                
+                <a href="#" className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
+                  Vision Mission and Values
+                </a>
+
+               
+
+                <a href="#" className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
+                  Locations
                 </a>
 
                 <a href="#" className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                  Docs
+                  Team
                 </a>
 
                 <a href="#" className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                  Company
-                </a>
-
-                <a href="#" className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                  Resources
-                </a>
-
-                <a href="#" className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                  Blog
-                </a>
-
-                <a href="#" className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                  Contact Sales
+                  Contact Us
                 </a>
               </div>
-              <div className="mt-6">
-                <a
-                  href="#"
-                  className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
-                >
-                  Sign up
-                </a>
-                <p className="mt-6 text-center text-base font-medium text-gray-500">
-                  Existing customer?{' '}
-                  <a href="#" className="text-indigo-600 hover:text-indigo-500">
-                    Sign in
-                  </a>
-                </p>
-              </div>
+              
             </div>
           </div>
         </Popover.Panel>

@@ -8,7 +8,8 @@ const HeroSection = () => {
           <Image className='opacity-90 max-w-7xl mx-auto' layout="fill" objectFit="cover"  src="https://hope-product-profile-images.s3.ap-southeast-1.amazonaws.com/shutterstock_637136449.jpg" alt="" />
         </div>
 
-        <div className=' lg:bg-transparent md:min-w-full flex flex-col md:mx-auto absolute bottom-0  md:left-0 mt-20'>
+        {/* should be flex for multiple content, now its hidden */}
+        <div className='hidden lg:bg-transparent md:min-w-full flex-col md:mx-auto absolute bottom-0  md:left-0 mt-20'>
           <h4 className='bg-yellow-600 lg:bg-yellow-600 lg:rounded-t-lg lg:rounded-b-xs lg:px-2 lg:py-2
              text-gray-900
               py-1 px-1 rounded-t-lg rounded-b-sm
@@ -16,7 +17,7 @@ const HeroSection = () => {
               shadow-2xl
               text-xl sm:text-[22px] md:text-2xl lg:text-4xl
               font-bold '>
-            Managed Services
+            
           </h4>
           <p className='bg-yellow-600 lg:bg-yellow-600 
               py-1 px-1 rounded-t-lg lg:rounded-xl lg:px-2 lg:pb-2
@@ -24,7 +25,7 @@ const HeroSection = () => {
               text-gray-100
               text-sm sm:text-[18px] md:text-lg lg:text-2xl text-center
               font-medium'>
-            Delivering scalable solutions that add greater value, through a digitally enabled experience, across the globe
+            
           </p>
         </div>                
       </div>
