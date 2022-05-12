@@ -23,6 +23,7 @@ import {
 } from '@heroicons/react/outline'
 // import {UserGroupIcon} from '@heroicons/react/solid/UserGroupIcon'
 import { ChevronDownIcon } from '@heroicons/react/solid'
+import Logo from './Logo/Logo.svg'
 
 const services = [
   {
@@ -92,15 +93,11 @@ export default function Header() {
     <Popover className="relative bg-white">
       <div className="absolute inset-0 shadow z-30 pointer-events-none" aria-hidden="true" />
       <div className="relative z-20">
-        <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-5 sm:px-6 sm:py-4 lg:px-8 md:justify-start md:space-x-10">
+        <div className="max-w-7xl mx-auto flex justify-between items-center px-4  sm:px-6 sm:py-4 lg:px-8 md:justify-start md:space-x-10">
           <div>
             <a href="#" className="flex">
               <span className="sr-only">Workflow</span>
-              <img
-                className="h-8 w-auto sm:h-12"
-                src="https://audiophille.s3.ap-southeast-1.amazonaws.com/temp/Logo.svg"
-                alt=""
-              />
+              <Logo width={250} height={90} fill={'red'} />              
             </a>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
