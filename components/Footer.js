@@ -8,11 +8,11 @@ const Footer = () => {
               A Managed Services Company in <br /> London, Uk <br /> Bengaluru, India
             </span>
             <div className='m-2 mx-1 tracking-wide py-2 font-sofia text-white flex flex-col md:flex-row'>
-              <span className='text-lg mr-3'>hello@example.com</span>
+              {/* <span className='text-lg mr-3'>hello@example.com</span>
               <span className='hidden md:block mx-3 text-xl'>•</span>
               <span className='md:mx-3 text-lg'>856.816.6159</span>
               <span className='hidden md:block mx-3 text-xl'>•</span>
-              <span className='md:mx-3 text-lg'>856.816.6159</span>              
+              <span className='md:mx-3 text-lg'>856.816.6159</span>               */}
             </div>
             <div className='m-1 mb-3 cursor-pointer'>
               <a href="https://www.linkedin.com/in/navkaplish/">
