@@ -4,8 +4,8 @@ const Footer = () => {
       <div className=' mb-0 max-w-7xl min-h-fit mx-auto py-3 md:py-10 px-10 md:px-20 bg-lightGreen shadow-md md:grid md:grid-cols-4'>
         <div className='col-span-3'>
           <div className='mx-2'>
-            <span className='font-sofia text-lg font-medium tracking-wide text-white'>
-              A Managed Services Company in London, Uk
+            <span className='font-sofia text-lg font-medium tracking-wide text-white whitespace-pre-line'>
+              A Managed Services Company in <br /> London, Uk <br /> Bengaluru, India
             </span>
             <div className='m-2 mx-1 tracking-wide py-2 font-sofia text-white flex flex-col md:flex-row'>
               <span className='text-lg mr-3'>hello@example.com</span>
