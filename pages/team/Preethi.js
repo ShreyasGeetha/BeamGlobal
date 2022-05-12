@@ -7,7 +7,7 @@ const Navinder = (props) => {
   return (
     <div className='max-w-7xl mx-auto my-20 lg:grid lg:grid-cols-4 lg:my-20'>
       <div className=' m-2'>
-        <img className=' rounded-full h-36 w-36 lg:h-48 lg:w-48 mx-auto' src={info.icon} alt="" />
+        <img className=' rounded-full h-36 w-36 lg:h-48 lg:w-48 mx-auto p-1 bg-red-600' src={info.image} alt="" />
       </div>
       <div className='col-span-2'>
         <div className='text-center flex flex-col 

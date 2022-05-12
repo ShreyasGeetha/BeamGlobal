@@ -1,10 +1,14 @@
 import Image from 'next/image';
 import {  useRouter } from 'next/router';
 import Navinder from '../pages/team/Navinder';
+import {
+  MailIcon
+} from '@heroicons/react/solid'
+
 const teams = [
-  { icon: '/Nav.jpeg', name: 'Navinder Kaplish', title:'CEO'},
-  {icon:'/pHari.jpeg', name: 'Preethi Hari', title:'COO'},
-  {icon:'/Shree.jpg', name: 'Shreyas Ananth', title:'CTO'}, 
+  { image: '/Nav.jpeg', name: 'Navinder Kaplish', title:'CEO', expertise:'Digital, Blockchain and Risk', city:'London', country:'dfg', email:'dfg', linkedin:'https://www.linkedin.com/in/navkaplish/', about:'Nav is a seasoned business and technology executive with 18+ years of global corporate and entrepreneurial experience in building and managing digital teams and in leadership roles spanning Governance, Risk & Compliance, Audits and conceptualisation and delivery of Blockchain products.'},
+  {image:'/pHari.jpeg', name: 'Preethi Hari', title:'COO',expertise:'Risk Management', city:'London', country:'dfg', email:'dfg', linkedin:'https://www.linkedin.com/in/preethihari/', about: 'Preethi is a versatile senior-level corporate professional with 18+ years of experience in Risk Management, IT Governance, IT Security, Business Continuity, Audits, Compliance and Regulatory. She specialises in COBIT/ COSO framework, ITSM (ITIL), 6-Sigma, SOX etc in Banking, Insurance, Oil & Gas, Shipping, Mining, Logistics, Telecom and Commercial Real Estate.'},
+  {image:'/Shree.jpg', name: 'Shreyas Ananth', title:'CTO',expertise:'Product Delivery, Support and Consultant', city:'Bengaluru', country:'dfg', email:'dfg', linkedin:'https://www.linkedin.com/in/shreyas-ananth-23b0b62b', about:'Shreyas is a technologist at heart and has over 12 years of experience in leading complex technology development and support projects for Risk Management software applications across banking and other product driven domains. He is ITIL-certified, Delivery and Release Lead.'}, 
 ]
 
 const Team = () => {
@@ -37,23 +41,58 @@ const Team = () => {
   return (
     <div className='bg-white shadow-md max-w-7xl mx-auto m-4 lg:my-7'>
       <div className='text-3xl lg:text-4xl font-serif my-7 mx-4 text-center md:text-justify'>
-        <span>BeamGlobal Manage Service&apos;s Team</span>
+        <span>Our Team</span>
       </div>
-      <div className='flex flex-col md:grid md:grid-cols-3 m-4 lg:my-10'>      
+      <div className='flex flex-col md:grid md:grid-cols-2 m-4 lg:my-10 lg:grid-cols-3 '>      
         {
-          teams.map((team, index) => (
+          teams.map((member, index) => (
             <div
-              onClick={()=>gotoPerson(team, index)}
-              key={index} className='  m-2 p-2 md:p-4 lg:m-7 cursor-pointer shadow-md rounded-t-3xl rounded-b-3xl border-t-indigo-400 border-b-indigo-400 border-2'>
-              <div>
-                <img className=' rounded-full h-36 w-36 lg:h-48 lg:w-48 mx-auto' src={team.icon} alt="" />
+              onClick={()=>gotoPerson(member, index)}
+              key={index} className='  m-2 p-2 md:p-4 lg:m-7 cursor-pointer shadow-md rounded-t-xl rounded-b-xl border-t-2'>
+              
+              <div className='h-2/3  border-0'>
+                <div className='mb-20 mt-6'>
+                  <img className=' rounded-full p-1 bg-red-600 h-36 w-36 lg:h-48 lg:w-48 mx-auto' src={member.image} alt="" />
+                </div>
+
+                <div className='mx-4 font-sans text-xs text-ellipsis overflow-hidden leading-7 '>
+                  {member.about}
+                </div>
               </div>
-              <div className='text-center m-1 p-1'>
-                <span className='font-bold font-handwriting text-xl lg:text-2xl'>{team.name}</span>
+
+              <div className=' mx-4 mt-9 mb-6 flex flex-col space-y-2 font-sans'>
+                <div className=''>
+                  <span className='font-bold font-handwriting text-xl lg:text-2xl whitespace-pre-line leading-4 tracking-wider'>{member.name}</span>
+                </div>
+
+                <div className='m-0'>
+                  <span className='tracking-widest '>{member.title}</span>
+                </div>
+                
+                <div className='text-sm tracking-wider'>
+                  {member.expertise}
+                </div>
+                
+                <div className='text-sm tracking-widest'>
+                  {member.city}
+                </div>   
+                
+                <div className='flex'>
+                  <div>
+                    <MailIcon className="flex-shrink-0 h-6 w-6 text-gray-700 mr-2" aria-hidden="true" />
+                  </div>
+                  <div>
+                    <a href={member.linkedin}>
+                      <img className='h-6 w-6 mr-2' src="/linkedin.png" alt="" />
+                    </a>
+                  </div>
+                  <div onClick={()=>gotoPerson(member, index)}>
+                    <button className='bg-black text-gray-200 font-charter text-sm px-3 py-1 tracking-widest font-normal'>View Profile</button>
+                  </div>
+                </div>
+
               </div>
-              <div className='text-center m-1'>
-                <span className='font-semibold'>{team.title}</span>
-              </div>
+
             </div>
           ))
         }

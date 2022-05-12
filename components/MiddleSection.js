@@ -10,14 +10,14 @@ const challenges = [
 
 const MiddleSection = () => {
   return (
-    <div className='bg-red-50 max-w-7xl mx-auto shadow-md '>
-      <div className='m-2 py-4 md:m-4 md:py-7'>
+    <div className='bg-white max-w-7xl mx-auto shadow-md '>
+      <div className='m-2 py-4 md:m-4 md:py-7 text-center'>
         <span className='font-extrabold text-xl m-1 sm:text-3xl lg:m-10 lg:py-7 md:m-5 font-handwriting lg:text-4xl'>Companies today are challenged with:</span>
       </div>
       <div className='m-4 md:grid md:grid-cols-2 lg:grid-cols-3'>
         {
           challenges.map((items, index) => (
-            <div key={index} className='p-2 m-2'>
+            <div key={index} className='p-2 m-2 bg-gray-50 hover:shadow-2xl hover:bg-white duration-300'>
               <div className=''>
                 <img className=' rounded-full 
                       h-50 w-48 sm:h-52 sm:w-56 md:h-44 md:w-50 

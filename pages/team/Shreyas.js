@@ -36,7 +36,7 @@ const Navinder = (props) => {
           Contact Details
         </div>
         <div className=''>
-          <a href="https://www.linkedin.com/in/navkaplish/">
+          <a href="https://www.linkedin.com/in/shreyas-ananth-23b0b62b/">
             <img className='h-7 w-7 md:h-8 md:w-8 lg:h-10 lg:w-10  mx-auto my-2' src="/linkedin.png" alt="" />
           </a>
         </div>

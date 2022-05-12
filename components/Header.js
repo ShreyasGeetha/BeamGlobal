@@ -42,13 +42,7 @@ const services = [
     description: "GRC Strategy. Remediation Strategy. Opportunities for automation.",
     href: '#',
     icon: ShieldCheckIcon
-  },
-  {
-    name: 'Integrations',
-    description: "Connect with third-party tools that you're already using.",
-    href: '#',
-    icon: ViewGridIcon,
-  },
+  }  
 ]
 const callsToAction = [
   { name: 'Watch Demo', href: '#', icon: PlayIcon },
@@ -103,7 +97,7 @@ export default function Header() {
             <a href="#" className="flex">
               <span className="sr-only">Workflow</span>
               <img
-                className="h-8 w-auto sm:h-10"
+                className="h-8 w-auto sm:h-12"
                 src="https://audiophille.s3.ap-southeast-1.amazonaws.com/temp/Logo.svg"
                 alt=""
               />
@@ -116,7 +110,7 @@ export default function Header() {
             </Popover.Button>
           </div>
           <div className="hidden md:flex-1 md:flex md:items-center md:justify-between">
-            <Popover.Group as="nav" className="flex space-x-10">
+            <Popover.Group as="nav" className="flex space-x-10 ml-auto">
               <Popover>
                 {({ open }) => (
                   <>
@@ -180,7 +174,7 @@ export default function Header() {
                   <>
                     <Popover.Button
                       className={classNames(
-                        open ? 'text-gray-900 translate-x-1 scale-110 duration-300 ' : 'text-gray-500',
+                        open ? 'text-gray-900 translate-x-1 scale-105 duration-300 ' : 'text-gray-500',
                         'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none hover:translate-x-1 hover:scale-110 translate-x-0 duration-300'
                       )}
                     >
@@ -229,22 +223,7 @@ export default function Header() {
                               </div>
                             </a>
                           ))}
-                        </div>
-                        <div className="bg-gray-50">
-                          <div className="max-w-7xl mx-auto space-y-6 px-4 py-5 sm:flex sm:space-y-0 sm:space-x-10 sm:px-6 lg:px-8">
-                            {callsToAction.map((item) => (
-                              <div key={item.name} className="flow-root">
-                                <a
-                                  href={item.href}
-                                  className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100"
-                                >
-                                  <item.icon className="flex-shrink-0 h-6 w-6 text-gray-400" aria-hidden="true" />
-                                  <span className="ml-3">{item.name}</span>
-                                </a>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
+                        </div>                        
                       </Popover.Panel>
                     </Transition>
                   </>
@@ -308,13 +287,7 @@ export default function Header() {
                         <div className="ml-4 text-base font-medium text-gray-900">{item.name}</div>
                       </a>
                     ))}
-                  </div>
-                  <div className="mt-8 text-base">
-                    <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-                      {' '}
-                      View all products <span aria-hidden="true">&rarr;</span>
-                    </a>
-                  </div>
+                  </div>                  
                 </nav>
               </div>
             </div>
