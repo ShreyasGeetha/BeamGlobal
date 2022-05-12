@@ -9,6 +9,7 @@ module.exports = {
       'orangeHair': '#A95E2F',
       'orangeConstrastText': '#E9FFEA',
       'lightGreen': '#15323A',
+      'logoBlue': '#24BFFF',
     }
     },
     fontFamily: {

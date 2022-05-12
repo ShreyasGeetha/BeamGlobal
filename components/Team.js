@@ -55,7 +55,7 @@ const Team = () => {
                   <img className=' rounded-full p-1 bg-red-600 h-36 w-36 lg:h-48 lg:w-48 mx-auto' src={member.image} alt="" />
                 </div>
 
-                <div className='mx-4 font-sans text-xs text-ellipsis overflow-hidden leading-7 '>
+                <div className='mx-4 font-sans text-xs text-ellipsis overflow-hidden leading-7'>
                   {member.about}
                 </div>
               </div>
