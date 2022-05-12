@@ -87,7 +87,7 @@ const Team = () => {
                     </a>
                   </div>
                   <div onClick={()=>gotoPerson(member, index)}>
-                    <span className='text-blue-700 font-charter text-sm px-3 py-1 tracking-widest font-normal'>View Profile</span>
+                    <span className='text-blue-700 font-charter text-md px-3 py-1 tracking-widest font-normal'>View Profile</span>
                   </div>
                 </div>
 
